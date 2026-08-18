@@ -7,10 +7,18 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Dependencies
+node_modules/
+
+# Build
+dist/
+dist-ssr/
+.vite/
+
+# Environment variables
+.env
+.env.*
+!.env.example
 
 # Editor directories and files
 .vscode/*
@@ -22,3 +30,25 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# TypeScript
+*.tsbuildinfo
+
+# ESLint
+.eslintrc
+.eslintcache
+
+# npm
+.npm
+*.tgz
+
+# Other caches
+.cache/
+.parcel-cache/
+.next/
+out/
+.nuxt/
+.output/
+
+# Vite
+vite.config.js.timestamp-*
