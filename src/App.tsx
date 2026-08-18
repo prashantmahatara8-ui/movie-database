@@ -1,11 +1,31 @@
-import { Button } from "@/components/ui/button"
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import "./App.css";
+
+import Home from "./pages/Home";
+import Search from "./pages/search";
+import MovieDetails from "./pages/moviedetails";
+import SearchBar from "./components/searchbar";
 
 function App() {
   return (
-    <div className="flex min-h-svh flex-col items-center justify-center">
-      <Button>Click me</Button>
-    </div>
-  )
+    <BrowserRouter>
+      <header className="navbar">
+        <Link to="/" className="logo">
+          🎬 <span>Movie</span>DB
+        </Link>
+
+        <SearchBar />
+      </header>
+
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/movie/:id" element={<MovieDetails />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
